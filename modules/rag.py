@@ -22,7 +22,7 @@ def show(api_key):
             anonymized_telemetry=False,
             is_persistent=False
         ))
-        st.session_state.collection = st.session_state.chroma_client.create_collection(
+        st.session_state.collection = st.session_state.chroma_client.get_or_create_collection(
             name="study_docs",
             metadata={"description": "Study documents collection"}
         )
